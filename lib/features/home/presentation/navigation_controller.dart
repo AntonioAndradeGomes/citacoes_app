@@ -42,4 +42,10 @@ class NavigationController extends GetxController {
     _pageController.jumpToPage(page);
     _currentIndex.value = page;
   }
+
+  @override
+  void onClose() {
+    _pageController.dispose();
+    super.onClose();
+  }
 }

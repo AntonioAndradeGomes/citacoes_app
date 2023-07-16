@@ -2,19 +2,103 @@ import 'package:citacoes/config/theme/app_colors.dart';
 import 'package:citacoes/features/created_for_you/presentation/created_for_you_page.dart';
 import 'package:citacoes/features/discovery/presentation/discovery_page.dart';
 import 'package:citacoes/features/favorites/presentation/favorites_page.dart';
+import 'package:citacoes/features/home/presentation/navigation_controller.dart';
+import 'package:citacoes/features/home/presentation/widgets/bottom_navigation_iten.dart';
 import 'package:citacoes/features/profile/presentation/profile_page.dart';
 import 'package:citacoes/features/search/presentation/search_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final _navigatorController = Get.find<NavigationController>();
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 10,
+        color: AppColors.blueRibbon,
+        elevation: 0,
+        padding: EdgeInsets.zero,
+        height: 60,
+        child: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+          ),
+          child: Obx(
+            () => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BottomNavigationIten(
+                  context: context,
+                  icon: IconlyLight.edit,
+                  selectPage: _navigatorController.currentPage ==
+                      NavigationTabs.createdForYou,
+                  label: 'Minhas',
+                  onTap: () {
+                    _navigatorController.navigatePageView(
+                      NavigationTabs.createdForYou,
+                    );
+                  },
+                ),
+                BottomNavigationIten(
+                  context: context,
+                  icon: IconlyLight.discovery,
+                  selectPage: _navigatorController.currentPage ==
+                      NavigationTabs.discovery,
+                  label: 'Explorar',
+                  onTap: () {
+                    _navigatorController.navigatePageView(
+                      NavigationTabs.discovery,
+                    );
+                  },
+                ),
+                BottomNavigationIten(
+                  context: context,
+                  icon: IconlyLight.search,
+                  selectPage:
+                      _navigatorController.currentPage == NavigationTabs.search,
+                  label: 'Buscar',
+                  onTap: () {
+                    _navigatorController.navigatePageView(
+                      NavigationTabs.search,
+                    );
+                  },
+                ),
+                BottomNavigationIten(
+                  context: context,
+                  icon: IconlyLight.heart,
+                  selectPage: _navigatorController.currentPage ==
+                      NavigationTabs.favorites,
+                  label: 'Favoritas',
+                  onTap: () {
+                    _navigatorController.navigatePageView(
+                      NavigationTabs.favorites,
+                    );
+                  },
+                ),
+                BottomNavigationIten(
+                  context: context,
+                  icon: IconlyLight.profile,
+                  selectPage: _navigatorController.currentPage ==
+                      NavigationTabs.profile,
+                  label: 'Perfil',
+                  onTap: () {
+                    _navigatorController.navigatePageView(
+                      NavigationTabs.profile,
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: PageView(
+        controller: _navigatorController.pagecontroller,
         physics: const NeverScrollableScrollPhysics(),
         children: [
           CreatedForYouPage(),
@@ -23,80 +107,6 @@ class HomePage extends StatelessWidget {
           FavoritesPage(),
           ProfilePage(),
         ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        notchMargin: 10,
-        color: AppColors.blueRibbon,
-        elevation: 0,
-        child: Container(
-          alignment: Alignment.center,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _bootomItem(
-                context: context,
-                icon: IconlyLight.edit,
-                page: 1,
-                label: 'Minhas',
-              ),
-              _bootomItem(
-                context: context,
-                icon: IconlyLight.discovery,
-                page: 1,
-                label: 'Explorar',
-              ),
-              _bootomItem(
-                context: context,
-                icon: IconlyLight.search,
-                page: 1,
-                label: 'Buscar',
-              ),
-              _bootomItem(
-                context: context,
-                icon: IconlyLight.heart,
-                page: 1,
-                label: 'Favoritas',
-              ),
-              _bootomItem(
-                context: context,
-                icon: IconlyLight.profile,
-                page: 1,
-                label: 'Perfil',
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _bootomItem({
-    required BuildContext context,
-    required IconData icon,
-    required int page,
-    required String label,
-  }) {
-    return ZoomTapAnimation(
-      onTap: () {},
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: Colors.transparent,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-            ),
-            Text(
-              label,
-            ),
-          ],
-        ),
       ),
     );
   }
