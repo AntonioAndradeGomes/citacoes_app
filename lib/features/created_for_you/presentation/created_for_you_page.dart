@@ -7,7 +7,7 @@ class CreatedForYouPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CreatedForYouPage'),
+        title: const Text('Criados por você'),
       ),
       body: Container(),
     );
