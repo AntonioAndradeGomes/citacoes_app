@@ -1,6 +1,5 @@
 import 'package:citacoes/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class BottomNavigationIten extends StatelessWidget {
@@ -37,10 +36,14 @@ class BottomNavigationIten extends StatelessWidget {
           children: [
             Icon(
               icon,
+              color: Colors.white,
             ),
             Text(
               label,
-              style: context.textTheme.titleMedium,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+              ),
             ),
           ],
         ),
