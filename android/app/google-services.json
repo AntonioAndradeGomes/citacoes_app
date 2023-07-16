@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1004775315766",
+    "project_id": "citacoes-495ed",
+    "storage_bucket": "citacoes-495ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004775315766:android:a6481aa68c7bd0276fbb97",
+        "android_client_info": {
+          "package_name": "com.example.citacoes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004775315766-1dd6besp39lfddja5mm8m1cn2d0dhq4m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.citacoes",
+            "certificate_hash": "7ed7683d4405dbf9cbae4f5c0de926b2bae3642f"
+          }
+        },
+        {
+          "client_id": "1004775315766-3jujk4uknl2cv6q8qilldh8t1fu21vr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpNpHwZC8J6qHj5_Rr1QPYuWu0AqD7j_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004775315766-3jujk4uknl2cv6q8qilldh8t1fu21vr1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
