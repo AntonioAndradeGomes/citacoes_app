@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
           ),
           child: Obx(
             () => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 BottomNavigationIten(
                   context: context,
