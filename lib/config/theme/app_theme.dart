@@ -1,3 +1,4 @@
+import 'package:citacoes/config/theme/app_bar_theme.dart';
 import 'package:citacoes/config/theme/color_scheme_data.dart';
 import 'package:citacoes/config/theme/text_theme.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ abstract class AppTheme {
     fontFamily: 'Dosis',
     scaffoldBackgroundColor: AppColors.selagoBackground,
     textTheme: TextThemeData.textLightTheme,
+    appBarTheme: AppBarThemes.appBarLigthTheme,
   );
 
   static final darkTheme = ThemeData(
@@ -20,5 +22,6 @@ abstract class AppTheme {
     fontFamily: 'Dosis',
     scaffoldBackgroundColor: AppColors.cloudBrust,
     textTheme: TextThemeData.textDarkTheme,
+    appBarTheme: AppBarThemes.appBarDarkTheme,
   );
 }

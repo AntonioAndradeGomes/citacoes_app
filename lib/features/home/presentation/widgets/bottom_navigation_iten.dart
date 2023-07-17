@@ -23,6 +23,7 @@ class BottomNavigationIten extends StatelessWidget {
     return ZoomTapAnimation(
       onTap: onTap,
       child: Container(
+        margin: const EdgeInsets.all(5),
         width: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
