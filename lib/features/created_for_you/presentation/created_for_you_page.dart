@@ -1,4 +1,5 @@
 import 'package:citacoes/config/routes/app_routes.dart';
+import 'package:citacoes/features/shared/entity/quote_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,9 +25,9 @@ class CreatedForYouPage extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {
-                Get.toNamed(
-                  AppRoutes.create,
-                );
+                Get.toNamed(AppRoutes.create, arguments: {
+                  'quote': QuoteEntity.inital,
+                });
               },
               icon: const Icon(
                 Icons.add,

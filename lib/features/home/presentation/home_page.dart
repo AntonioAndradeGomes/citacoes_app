@@ -100,7 +100,7 @@ class HomePage extends StatelessWidget {
       body: PageView(
         controller: _navigatorController.pagecontroller,
         physics: const NeverScrollableScrollPhysics(),
-        children: [
+        children: const [
           CreatedForYouPage(),
           DiscoveryPage(),
           SearchPage(),

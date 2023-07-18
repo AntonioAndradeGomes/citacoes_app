@@ -45,6 +45,9 @@ dependencies:
   iconly: ^1.0.1
   zoom_tap_animation: ^1.1.0
   equatable: ^2.0.5
+  flutter_screenutil: ^5.8.4
+  flex_color_picker: ^3.3.0
+
 
 dev_dependencies:
   flutter_test:
