@@ -1,4 +1,6 @@
+import 'package:citacoes/config/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CreatedForYouPage extends StatelessWidget {
   const CreatedForYouPage({super.key});
@@ -21,7 +23,11 @@ class CreatedForYouPage extends StatelessWidget {
               right: 10,
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(
+                  AppRoutes.create,
+                );
+              },
               icon: const Icon(
                 Icons.add,
                 size: 30,

@@ -15,6 +15,9 @@ class AppBarThemes {
       color: AppColors.blueRibbon,
     ),
     toolbarHeight: 50,
+    iconTheme: const IconThemeData(
+      color: AppColors.azureRadiance,
+    ),
   );
 
   static AppBarTheme appBarDarkTheme = AppBarTheme(
@@ -29,5 +32,8 @@ class AppBarThemes {
       color: AppColors.white,
     ),
     toolbarHeight: 50,
+    iconTheme: const IconThemeData(
+      color: AppColors.white,
+    ),
   );
 }

@@ -19,7 +19,7 @@ class AuthFirebaseDatasourceImpl implements AuthDatasource {
   });
 
   CollectionReference get _usersCollection => firebaseFirestore.collection(
-        FirebaseCollectionName.citacao,
+        FirebaseCollectionName.user,
       );
 
   @override
