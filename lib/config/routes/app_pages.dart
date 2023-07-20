@@ -1,6 +1,5 @@
 import 'package:citacoes/config/routes/app_routes.dart';
 import 'package:citacoes/features/create/presentation/presentation.dart';
-
 import 'package:get/get.dart';
 import '../../features/auth/presentation/presentation.dart';
 import '../../features/home/presentation/presentation.dart';
@@ -29,7 +28,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: AppRoutes.create,
-      page: () => CreateQuotePage(),
+      page: () => const CreateQuotePage(),
       binding: CreateQuoteBinding(),
     ),
   ];

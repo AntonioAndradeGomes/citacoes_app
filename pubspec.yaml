@@ -48,7 +48,6 @@ dependencies:
   flutter_screenutil: ^5.8.4
   flex_color_picker: ^3.3.0
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

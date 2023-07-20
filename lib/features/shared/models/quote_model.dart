@@ -8,6 +8,8 @@ class QuoteModel extends QuoteEntity {
     required int backgroudColor,
     required DateTime createdAt,
     required DateTime updatedAt,
+    required bool isBold,
+    required int textAlign,
   }) : super(
           id: id,
           backgroudColor: backgroudColor,
@@ -15,5 +17,7 @@ class QuoteModel extends QuoteEntity {
           quoteText: quoteText,
           updatedAt: updatedAt,
           author: author,
+          isBold: isBold,
+          textAlign: textAlign,
         );
 }

@@ -6,6 +6,8 @@ class CreateQuoteController extends GetxController {
   late TextEditingController quoteTextController;
   late TextEditingController authorTextController;
   final _background = Colors.black.obs;
+  final _isBold = false.obs;
+  final _textAlign = 0.obs;
   late QuoteEntity entity;
 
   @override
@@ -22,6 +24,10 @@ class CreateQuoteController extends GetxController {
   }
 
   Color get background => _background.value;
+  bool get isBold => _isBold.value;
+  int get textAlign => _textAlign.value;
 
   void setBackgroud(Color value) => _background.value = value;
+  void setBold(bool value) => _isBold.value = value;
+  void setTextAlign(int value) => _textAlign.value = value;
 }
