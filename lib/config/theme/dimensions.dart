@@ -64,6 +64,20 @@ class Dimensions {
   double sizeBasedOnWidth(double size) {
     return size.w;
   }
+
+  //citação text size
+  double quoteTextSize(int value) {
+    if (value == 0) {
+      return 16.sp;
+    }
+    if (value == 1) {
+      return 20.sp;
+    }
+    if (value == 2) {
+      return 24.sp;
+    }
+    return 24.sp;
+  }
 }
 
 extension DimensionsExtensions on BuildContext {

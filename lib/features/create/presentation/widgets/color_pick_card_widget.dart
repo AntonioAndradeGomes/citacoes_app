@@ -12,41 +12,38 @@ class ColorPickCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dimensions = context.dimensions;
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: dimensions.borderRadius(20),
-        color: AppColors.white,
-      ),
-      child: Obx(
-        () => ColorPicker(
-          onColorChanged: (value) {
-            _controller.setBackgroud(value);
-          },
-          color: _controller.background,
-          width: dimensions.sizeBasedOnWidth(40),
-          height: dimensions.sizeBasedOnHeigth(40),
-          pickersEnabled: const {
-            ColorPickerType.both: true,
-            ColorPickerType.accent: false,
-            ColorPickerType.primary: false,
-          },
-          hasBorder: false,
-          wheelHasBorder: false,
-          columnSpacing: 8,
-          runSpacing: 8,
-          heading: Text(
-            'Selecione a cor de fundo',
-            style: context.textTheme.headlineSmall!.copyWith(
-              color: AppColors.azureRadiance,
-            ),
+    return Obx(
+      () => ColorPicker(
+        onColorChanged: (value) {
+          _controller.setBackgroud(value);
+        },
+        color: _controller.background,
+        width: dimensions.sizeBasedOnWidth(40),
+        height: dimensions.sizeBasedOnHeigth(40),
+        pickersEnabled: const {
+          // ColorPickerType.both: true,
+          ColorPickerType.accent: true,
+          ColorPickerType.primary: true,
+          ColorPickerType.custom: false,
+          ColorPickerType.wheel: true,
+        },
+        wheelDiameter: 150,
+        hasBorder: false,
+        wheelHasBorder: false,
+        wheelSquareBorderRadius: 20,
+        columnSpacing: 8,
+        runSpacing: 8,
+        heading: Text(
+          'Selecione a cor de fundo',
+          style: context.textTheme.headlineSmall!.copyWith(
+            color: AppColors.azureRadiance,
           ),
-          subheading: Text(
-            'Selecione a tonalidade da cor',
-            style: context.textTheme.titleMedium!.copyWith(
-              color: AppColors.azureRadiance,
-              fontSize: 14,
-            ),
+        ),
+        subheading: Text(
+          'Selecione a tonalidade da cor',
+          style: context.textTheme.titleMedium!.copyWith(
+            color: AppColors.azureRadiance,
+            fontSize: 14,
           ),
         ),
       ),

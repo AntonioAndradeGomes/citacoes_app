@@ -7,6 +7,7 @@ class QuoteEntity extends Equatable {
   final int backgroudColor;
   final int textAlign;
   final bool isBold;
+  final int fontSize;
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -19,6 +20,7 @@ class QuoteEntity extends Equatable {
     required this.updatedAt,
     this.textAlign = 0,
     this.isBold = false,
+    this.fontSize = 1,
   });
 
   static QuoteEntity get inital => QuoteEntity(
@@ -29,6 +31,7 @@ class QuoteEntity extends Equatable {
         textAlign: 0,
         author: '',
         isBold: false,
+        fontSize: 1,
       );
 
   @override
@@ -43,6 +46,7 @@ class QuoteEntity extends Equatable {
         textAlign,
         isBold,
         textAlign,
+        fontSize,
       ];
 
   QuoteEntity copyWith({
@@ -54,6 +58,7 @@ class QuoteEntity extends Equatable {
     DateTime? updatedAt,
     bool? isBold,
     int? textAlign,
+    int? fontSize,
   }) {
     return QuoteEntity(
       author: author ?? this.author,
@@ -64,6 +69,7 @@ class QuoteEntity extends Equatable {
       id: id ?? this.id,
       isBold: isBold ?? this.isBold,
       textAlign: textAlign ?? this.textAlign,
+      fontSize: fontSize ?? this.fontSize,
     );
   }
 }
