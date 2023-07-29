@@ -1,3 +1,4 @@
+import 'package:citacoes/features/shared/models/quote_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -82,5 +83,20 @@ class QuoteEntity extends Equatable {
   @override
   String toString() {
     return 'QuoteEntity(id: $id, userId: $userId, quoteText: $quoteText, author: $author, backgroudColor: $backgroudColor, textAlign: $textAlign, isBold: $isBold, fontSize: $fontSize, createdAt: $createdAt, updatedAt: $updatedAt)';
+  }
+
+  QuoteModel toModel() {
+    return QuoteModel(
+      id: id,
+      userId: userId,
+      quoteText: quoteText,
+      author: author,
+      backgroudColor: backgroudColor,
+      textAlign: textAlign,
+      isBold: isBold,
+      fontSize: fontSize,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+    );
   }
 }
