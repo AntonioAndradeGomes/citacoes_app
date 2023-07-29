@@ -34,7 +34,7 @@ class SelectTextSizeWidget extends StatelessWidget {
               children: SizeText.values
                   .map(
                     (e) => TextSelectorWidget(
-                      label: QuoteHelpers.textSizeMap[e]!,
+                      label: e.label,
                       isSelected:
                           SizeText.values.indexOf(e) == _controller.textSize,
                       size: dimensions.sizeBasedOnWidth(70),

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-enum SizeText { small, medium, large }
+enum SizeText {
+  small('Pequeno'),
+  medium('Medio'),
+  large('Grande');
+
+  final String label;
+  const SizeText(this.label);
+}
 
 abstract class QuoteHelpers {
   static final Map<int, TextAlign> textAlignMap = {
@@ -30,7 +37,7 @@ abstract class QuoteHelpers {
   static final Map<SizeText, String> textSizeMap = {
     SizeText.small: 'Pequeno',
     SizeText.medium: 'Médio',
-    SizeText.large: 'Pequeno',
+    SizeText.large: 'Grande',
   };
 
   static const colors = [

@@ -1,7 +1,9 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 class QuoteEntity extends Equatable {
   final String? id;
+  final String? userId;
   final String quoteText;
   final String? author;
   final int backgroudColor;
@@ -13,14 +15,15 @@ class QuoteEntity extends Equatable {
 
   const QuoteEntity({
     this.id,
+    this.userId,
     required this.quoteText,
     this.author,
     required this.backgroudColor,
-    required this.createdAt,
-    required this.updatedAt,
     this.textAlign = 0,
     this.isBold = false,
     this.fontSize = 1,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
   static QuoteEntity get inital => QuoteEntity(
@@ -44,9 +47,8 @@ class QuoteEntity extends Equatable {
         updatedAt,
         isBold,
         textAlign,
-        isBold,
-        textAlign,
         fontSize,
+        userId,
       ];
 
   QuoteEntity copyWith({
@@ -59,6 +61,7 @@ class QuoteEntity extends Equatable {
     bool? isBold,
     int? textAlign,
     int? fontSize,
+    String? userId,
   }) {
     return QuoteEntity(
       author: author ?? this.author,
@@ -70,6 +73,14 @@ class QuoteEntity extends Equatable {
       isBold: isBold ?? this.isBold,
       textAlign: textAlign ?? this.textAlign,
       fontSize: fontSize ?? this.fontSize,
+      userId: userId ?? this.userId,
     );
+  }
+
+  Color get backgroudColorToColor => Color(backgroudColor);
+
+  @override
+  String toString() {
+    return 'QuoteEntity(id: $id, userId: $userId, quoteText: $quoteText, author: $author, backgroudColor: $backgroudColor, textAlign: $textAlign, isBold: $isBold, fontSize: $fontSize, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }

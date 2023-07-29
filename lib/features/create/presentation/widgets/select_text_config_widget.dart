@@ -13,40 +13,42 @@ class SelectTextConfigWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dimensions = context.dimensions;
-    return Padding(
-      padding: dimensions.paddingOnly(
-        bottom: 10,
-      ),
-      child: Obx(
-        () => Wrap(
-          direction: Axis.horizontal,
-          children: [
-            ...QuoteHelpers.textAlignMap.keys
-                .map(
-                  (e) => ItemIconSelected(
-                    selected: _controller.textAlign == e,
-                    icon: QuoteHelpers.textAlignIcon(e)!,
-                    onTap: () {
-                      _controller.setTextAlign(e);
-                    },
-                  ),
-                )
-                .toList(),
-            ItemIconSelected(
-              selected: !_controller.isBold,
-              icon: FontAwesomeIcons.n,
-              onTap: () {
-                _controller.setBold(false);
-              },
-            ),
-            ItemIconSelected(
-              selected: _controller.isBold,
-              icon: FontAwesomeIcons.bold,
-              onTap: () {
-                _controller.setBold(true);
-              },
-            ),
-          ],
+    return GestureDetector(
+      child: Padding(
+        padding: dimensions.paddingOnly(
+          bottom: 10,
+        ),
+        child: Obx(
+          () => Wrap(
+            direction: Axis.horizontal,
+            children: [
+              ...QuoteHelpers.textAlignMap.keys
+                  .map(
+                    (e) => ItemIconSelected(
+                      selected: _controller.textAlign == e,
+                      icon: QuoteHelpers.textAlignIcon(e)!,
+                      onTap: () {
+                        _controller.setTextAlign(e);
+                      },
+                    ),
+                  )
+                  .toList(),
+              ItemIconSelected(
+                selected: !_controller.isBold,
+                icon: FontAwesomeIcons.n,
+                onTap: () {
+                  _controller.setBold(false);
+                },
+              ),
+              ItemIconSelected(
+                selected: _controller.isBold,
+                icon: FontAwesomeIcons.bold,
+                onTap: () {
+                  _controller.setBold(true);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

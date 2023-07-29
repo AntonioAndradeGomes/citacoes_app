@@ -29,6 +29,7 @@ class ColorWidget extends StatelessWidget {
             ? const Center(
                 child: Icon(
                   Icons.check_rounded,
+                  color: Colors.white,
                 ),
               )
             : const SizedBox(),

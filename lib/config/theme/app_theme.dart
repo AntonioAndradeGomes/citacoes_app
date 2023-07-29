@@ -23,5 +23,11 @@ abstract class AppTheme {
     scaffoldBackgroundColor: AppColors.cloudBrust,
     textTheme: TextThemeData.textDarkTheme,
     appBarTheme: AppBarThemes.appBarDarkTheme,
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        overlayColor:
+            MaterialStateColor.resolveWith((states) => Colors.white12),
+      ),
+    ),
   );
 }

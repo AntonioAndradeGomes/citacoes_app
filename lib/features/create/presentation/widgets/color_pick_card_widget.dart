@@ -1,8 +1,6 @@
-import 'package:citacoes/config/theme/app_colors.dart';
 import 'package:citacoes/config/theme/dimensions.dart';
 import 'package:citacoes/features/create/presentation/create_quote_controller.dart';
 import 'package:citacoes/utils/helpers/quote_helpers.dart';
-import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

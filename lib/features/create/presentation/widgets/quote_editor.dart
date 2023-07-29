@@ -49,6 +49,7 @@ class QuoteEditor extends StatelessWidget {
                     fontWeight: _controller.isBold
                         ? FontWeight.bold
                         : FontWeight.normal,
+                    color: Colors.white,
                   ),
                   textAlign: QuoteHelpers.textAlignMap[_controller.textAlign]!,
                 ),

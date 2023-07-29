@@ -71,10 +71,10 @@ class Dimensions {
       return 16.sp;
     }
     if (value == 1) {
-      return 20.sp;
+      return 24.sp;
     }
     if (value == 2) {
-      return 24.sp;
+      return 34.sp;
     }
     return 24.sp;
   }

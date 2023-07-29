@@ -28,7 +28,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: AppRoutes.create,
-      page: () => const CreateQuotePage(),
+      page: () => CreateQuotePage(),
       binding: CreateQuoteBinding(),
     ),
   ];
